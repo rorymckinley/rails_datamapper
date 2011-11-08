@@ -21,7 +21,7 @@ module Rails
       end
 
       def full_config
-        YAML::load(ERB.new(config_file.read).result)
+        YAML::load(ERB.new(File.open(config_file, 'r').read).result)
       end
 
       memoize :full_config
